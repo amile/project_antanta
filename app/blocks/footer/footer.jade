@@ -1,0 +1,7 @@
+include ../logo/logo
+
+mixin footer()
+	+b.footer&attributes(attributes)
+		.container
+			+logo(true)(class='footer__logo')
+			block

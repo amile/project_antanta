@@ -1,6 +1,76 @@
 extends /blocks/layout-default/layout-default
 
+include /blocks/header/header
+include /blocks/footer/footer
+
 block head
-	- var pageTitle = 'CSSSR Project Template';
+	- var pageTitle = 'Antanta';
 
 block content
+	- var phone = '+7 (495) 512-32-56';
+	- var menuItems = ['О нас', 'Философия', 'Услуги', 'Проекты'];
+
+	+header(phone, menuItems)
+
+	section.about
+			.container
+				.columns
+					.column.about__picture.display-none-column_sm
+						.about__img-wrapper
+							img.about__img(src='./assets/images/about.png')
+					.column.about__hero
+						.about__hero-body
+							h2.about__title
+								| Антанта — это
+							p.about__text
+								| крупная компания в сфере IT с большим опытом работы и командой квалифицированных специалистов. Наша профессия – комплексные решения для бизнеса, начиная от разработки программного обеспечения до его полноценного внедрения в жизнь. Осуществляем весь цикл работ, включая консультации, обучение персонала, экспертизу, модернизацию программного обеспечения.
+
+	section.automation
+		img.bg-image(src='./assets/images/automation.png')
+		.filter
+		.container
+			.columns
+				.column.about__hero.automation__hero
+					.about__hero-body.animation__hero-body
+						h2.about__title.automation__title
+							| Автоматизация
+
+						p.about__text.automation__text
+							| Где бы ни находился ваш офис, специалисты нашей компании изучат имеющиеся возможности и в самые короткие сроки предложат оптимальные решения в сфере IT, способные сделать бизнес эффективнее, финансовые процессы – прозрачнее. А ваши клиенты будут довольны удобством и быстротой, с какими вы производите обслуживание.
+				.column.display-none-column_sm-md
+					
+
+	section.principles
+			.container
+				h2.principles__title
+					| Принципы нашей работы
+
+				.columns
+					.column
+						span.principle__icon
+
+						p.principle__text
+							| Максимально эффективно решать задачи, поставленные заказчиком
+					.column
+						span.principle__icon
+						p.principle__text
+							| Постоянно развиваться и совершенствоваться в профессиональной сфере
+					.column
+						span.principle__icon
+						p.principle__text
+							| Использовать лучшие современные технические решения в интересах клиента
+					.column
+						span.principle__icon
+						p.principle__text
+							| Владеть знаниями во всех сферах IT на экспертном уровне
+					.column
+						span.principle__icon
+						p.principle__text
+							| Нести полную ответственность за результат нашей работы
+
+	
+						
+
+
+
+	+footer

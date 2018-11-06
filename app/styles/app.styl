@@ -4,5 +4,214 @@ import('helpers/svg-size')
 @import 'helpers/mixins'
 @import 'helpers/fonts'
 @import 'helpers/optimize'
+@import 'helpers/grid'
 
 import('../blocks/**/*')
+
+body 
+	font-family Fira Sans
+
+.bg-image
+	position absolute
+	top 0px
+	left 0px
+	bottom 0px
+	right 0px
+	min-width 100%
+	min-height 100%
+	margin auto
+	
+	@media screen and (min-width: 1280px)
+		top 0
+		left 56.46%
+		bottom 0
+		right 0
+		min-width auto
+		
+.filter
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background-color #000
+	opacity .7
+	
+	@media screen and (min-width: 1280px)
+		display none
+
+.automation
+	position relative
+	height 413px
+	padding 44px 0
+	text-align center
+	overflow hidden
+	
+	@media screen and (min-width: 768px)
+		height 720px
+	
+	@media screen and (min-width: 1280px)
+		text-align left
+		
+
+
+	
+.about
+	
+	padding-top 24px
+	padding-bottom 50px
+	overflow hidden
+	
+	@media screen and (min-width: 1280px)
+		padding-top 124px
+	
+	
+.display-none-column_sm
+	display none
+	
+	@media screen and (min-width: 768px)
+			display block
+			
+.display-none-column_sm-md
+	display none
+	
+	@media screen and (min-width: 1280px)
+			display block
+			
+			
+.about__picture
+
+	position relative
+	
+	&::before
+		position absolute
+		top -124px
+		left -.75rem
+		width 376px
+		height 500px
+		content ''
+		background-image url('../images/about-back.png')
+			
+			
+	@media screen and (min-width: 1280px)
+			
+			&::before
+				width 455px
+	
+	
+		
+		
+		
+.about__hero
+	
+	@media screen and (min-width: 1280px)
+		background-image url('../images/emblem_gray.png')
+		background-repeat no-repeat
+		background-origin content-box
+
+.about__hero-body
+	margin-top 23px
+	
+	@media screen and (min-width: 768px)
+		margin-left 34px
+	
+	@media screen and (min-width: 1280px)
+		margin-top 114px
+		margin-left 109px
+		
+
+		
+.about__img-wrapper
+	position relative
+	z-index 10
+	width 352px
+	height 560px
+	margin 0 auto
+	overflow hidden
+	
+	@media screen and (min-width: 1280px)
+		width 406px
+		
+.about__img
+	min-width 100%
+	max-width none
+	height 100%
+				
+.about__title
+	margin-bottom 32px
+	font-size 20px
+	line-height 32px
+	font-weight 700
+	color #000
+	
+	@media screen and (min-width: 768px)
+		font-size 40px
+		line-height 48px
+	
+	
+.about__text
+	font-size 16px
+	line-height 24px
+	
+	@media screen and (min-width: 768px)
+		font-size 20px
+		line-height 32px
+	
+.automation__hero
+.automation__title
+	
+	@media screen and (max-width: 1280px)
+		color #fff
+
+.animation__hero-body
+	
+	@media screen and (max-width: 1280px)
+		margin 0 auto
+		max-width 650px
+	
+	@media screen and (max-width: 800px)
+		max-width 545px
+		
+	@media screen and (min-width: 768px) and (max-width: 1280px)
+		margin-top 10em
+	
+	
+.principles
+	padding-top 50px
+	padding-bottom 60px
+	background-color #F5F5F0
+	
+	@media screen and (min-width: 768px) and (max-width: 1280px)
+		.columns
+			flex-wrap wrap
+			justify-content center
+		.column
+			flex 0 1 33.33%
+	
+	
+.principles__title
+	margin-top 22px
+	margin-bottom 65px
+	font-size 40px
+	font-weight 700
+	line-height 48px
+	text-align center
+
+.principle__icon
+	display block
+	width 58px
+	height 59px
+	background-image url('../images/princip_in1.png'), url('../images/princ_out.png')
+	background-repeat no-repeat, no-repeat
+	background-position center, 0 0 
+	
+	@media screen and (max-width: 1200px)
+		margin auto
+	
+.principle__text
+	margin-top 32px
+	font-size 16px
+	line-height 24px
+	
+	@media screen and (max-width: 1200px)
+		text-align center

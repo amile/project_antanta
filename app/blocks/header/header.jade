@@ -1,0 +1,13 @@
+include ../logo/logo
+include ../menu/menu
+include ../phone/phone
+include ../question/question
+
+mixin header(phone, menuItems)
+	+b('header').header&attributes(attributes)
+		.container
+			+logo()
+			+menu(menuItems)(class='header__menu')
+			+question(class='header__question')
+			+phone(phone)(class='header__phone')
+			block

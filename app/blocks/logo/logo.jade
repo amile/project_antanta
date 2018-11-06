@@ -1,0 +1,8 @@
+mixin logo(white)
+	+b.logo&attributes(attributes)
+		if white
+			img.logo__logo(src='./assets/images/logo-white.png')
+		else
+			img.logo__logo(srcset='./assets/images/logo-sm.png 70w, ./assets/images/logo-md.png 129w',
+							sises='(max-width: 767px) 70px, 129px',
+							src='./assets/images/logo-md.png')
