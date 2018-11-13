@@ -3,5 +3,17 @@ include ../logo/logo
 mixin footer()
 	+b.footer&attributes(attributes)
 		.container
-			+logo(true)(class='footer__logo')
+			.columns
+				.column.column-5.column-order_last
+					p.contacts.footer__contacts
+						span.footer__contacts-mail hello@antanta.tech 
+						|+7 (495) 512-32-56
+				.column.column-2
+					+logo(true)(class='footer__logo')
+				.column.column-5
+					p.copyright.footer__copyright
+						|© Antanta, 2018 
+						br 
+						|Все права защищены
+				
 			block

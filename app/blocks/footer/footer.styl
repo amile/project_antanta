@@ -2,8 +2,37 @@
 	display block
 	
 	padding 40px 0
+	font-size 20px
+	line-height 1.6
+	color #fff
 	background-color $bg-color_footer
-	clearfix()
+	
 	
 	&__logo.logo
+		float none
 		width 129px
+	
+	&__copyright
+		opacity .6
+		
+	&__contacts-mail
+		display block
+		
+	@media screen and (min-width: 768px)
+		&__contacts
+			text-align right
+	
+	@media screen and (min-width: 1280px)
+		&__contacts-mail
+			display inline-block
+			
+			margin-right 80px
+
+.column-order_last
+	order 15	
+
+.column-2
+	flex-grow 2
+.column-5
+	flex-grow 5
+	

@@ -3,6 +3,8 @@ extends /blocks/layout-default/layout-default
 include /blocks/header/header
 include /blocks/footer/footer
 
+include /blocks/btn/btn
+
 block head
 	- var pageTitle = 'Antanta';
 
@@ -38,6 +40,32 @@ block content
 						p.about__text.automation__text
 							| Где бы ни находился ваш офис, специалисты нашей компании изучат имеющиеся возможности и в самые короткие сроки предложат оптимальные решения в сфере IT, способные сделать бизнес эффективнее, финансовые процессы – прозрачнее. А ваши клиенты будут довольны удобством и быстротой, с какими вы производите обслуживание.
 				.column.display-none-column_sm-md
+
+	section.advantage
+			.container
+				.columns.flex-flow_column-md
+					.column
+						.advantage__hero
+							img.bg-image.advantage__bg-image(src='./assets/images/background_advantage.png')
+							.advantage__hero-body
+								h2.advantage__title
+									|&gt;200
+								h3.advantage__subtitle.advantage__subtitle_sm
+									|Реализованных проектов по высоконагруженным торговым площадкам
+
+
+						
+					.column
+						.advantage__body
+							h3.advantage__subtitle
+								|Одно из направлений нашей деятельности — создание мощных высоконагруженных торговых площадок, от разработки до отладки и запуска.
+
+							p.advantage__text
+								|Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
+
+							+btn(class='btn')
+								|оставить заявку
+			
 
 	section.credo
 		img.bg-image(src='./assets/images/credo.png')
@@ -82,10 +110,6 @@ block content
 						span.principle__icon
 						p.principle__text
 							| Нести полную ответственность за результат нашей работы
-
-	
-						
-
 
 
 	+footer

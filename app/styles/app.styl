@@ -10,6 +10,12 @@ import('../blocks/**/*')
 
 body 
 	font-family Fira Sans
+	
+.flex-flow_column-md
+	flex-flow column
+	
+	@media screen and (min-width: 1280px)
+		flex-flow row
 
 .bg-image
 	position absolute
@@ -212,7 +218,139 @@ body
 		.column
 			flex 0 1 33.33%
 	
+.advantage
+	position relative
+	font-size 16px
+	color #242323
+	text-align center
+	overflow hidden
 	
+	&__hero
+		padding 33px 56px
+		overflow hidden
+		
+	&__hero-body
+		display inline-block
+		position relative
+		z-index 10
+		max-width 225px
+		margin auto
+		padding 29px 39px
+		text-align left
+		background-color #fff
+		
+	&__body
+		
+		position relative
+		z-index 10
+		max-width 280px
+		margin 0 auto
+		background-color #fff
+	
+	&__title
+		font-size 64px
+		font-weight 700
+		line-height 1
+		letter-spacing 2.5px
+		
+	&__subtitle
+		margin-top .5em
+		margin-bottom 1em
+		font-size 16px
+		line-height 1.5
+		font-weight 700
+		
+	&__text
+		margin-bottom 1em
+		font-size 16px
+		line-height 1.5
+		color #4D4A4A
+	
+		
+	&__btn
+		padding 14px 50px
+		
+	&__bg-image
+			min-width 100%
+			max-width 320px
+			min-height 16em
+			height 16em // 39.02%
+			margin 0 auto
+		
+	
+	@media screen and (min-width: 500px)
+		padding 40px 0
+			
+		&__bg-image
+			min-width auto
+			min-height auto
+			
+			
+	@media screen and (min-width: 768px)
+		padding 80px 0
+		
+		&__bg-image
+			min-width auto
+			min-height auto
+			height auto
+			max-width none
+			
+		&__hero
+			position relative
+			padding 65px 108px
+		
+		&__hero-body
+			max-width 408px
+			padding 75px 55px
+			
+		&__body
+			max-width 720px
+			
+		&__title
+			font-size 126px
+			
+		&__subtitle
+			margin-bottom 32px
+			font-size 24px
+		
+			line-height 1.33
+			
+		&__subtitle_sm
+			margin 0
+		
+		&__text
+			margin-bottom 40px
+			font-size 20px
+			line-height 1.6
+			
+	@media screen and (min-width: 1280px)
+		padding 100px 0
+		text-align left
+		
+		&__hero
+			padding 65px 90px
+			
+		&__hero-body
+			padding 75px 35px
+		
+		&__body
+			padding-left 19.375%
+			
+		&__bg-image
+			left 0
+		
+		&__subtitle
+			margin-top 40px
+		
+		&__subtitle_sm
+			margin 0
+			
+	@media screen and (max-width: 767px)
+		&__subtitle_sm
+			margin 0
+			font-size 12px
+			line-height 1.5
+		
 .principles__title
 	margin-top 22px
 	margin-bottom 65px
@@ -237,5 +375,5 @@ body
 	font-size 16px
 	line-height 24px
 	
-	@media screen and (max-width: 1200px)
+	@media screen and (max-width: 1280px)
 		text-align center
