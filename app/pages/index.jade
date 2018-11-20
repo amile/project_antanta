@@ -4,6 +4,8 @@ include /blocks/header/header
 include /blocks/footer/footer
 
 include /blocks/btn/btn
+include /blocks/service/service
+include /blocks/project/project
 
 block head
 	- var pageTitle = 'Antanta';
@@ -74,14 +76,29 @@ block content
 			.columns
 				.column.about__hero.automation__hero
 					.about__hero-body.credo__hero-body
-						h2.about__title.automation__title
+						h2.about__title.automation__title.credo__title
 							| Наша философия
 
 						p.about__text.automation__text
 							| Информационные технологии сегодня — это мощнейший инструмент развития бизнеса, без них не обходится не одна сфера деловой активности. Чем серьезнее и грамотнее компания использует IT, тем выше её успех и больше её конкурентные преимущества. Современные технологии, непрерывно развиваясь, дают нам в руки бесконечное число вариантов решения задач и поиска оптимальных моделей для повышения эффективности бизнеса и улучшения условий для работающих в нем людей.
 							
 				.column.display-none-column_sm-md
-					
+	
+	section.services
+		.container.overflow_hidden
+			h2.services__title.principles__title
+				|Наши услуги
+			.container-inner
+				.columns.flex-flow_row
+					.column
+						+service()
+					.column
+						+service()
+					.column
+						+service()
+
+	section.projects
+		+project()
 
 	section.principles
 			.container

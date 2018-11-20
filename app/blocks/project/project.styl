@@ -1,0 +1,69 @@
+.project
+	display block
+	
+	position relative
+	padding 36px 0
+	overflow hidden
+	
+	&__body
+		position relative
+		z-index 10
+	
+	&__title
+		max-width 235px
+		margin-bottom 78px
+		font-size 16px
+		font-weight 700
+		line-height 24px
+		color #fff
+		
+		
+	&__text
+		display none
+		
+	&__btn
+		padding 16px 30px
+		font-size 16px
+		font-weight 500
+		color #fff
+		background-color #000
+		
+	&__btn_contact
+		margin-top 63px
+		margin-bottom 24px
+		padding 15px 20px
+		font-size 14px
+		font-weight 500
+		color #807C7C
+		text-transform none
+		background-color #fff
+		border 2px solid $logo-color_yellow
+	
+	@media screen and (min-width: 768px)
+		&__hero
+			position relative
+			min-height 100%
+			margin-left .75rem
+			overflow hidden
+		
+		&__title
+			color #242424
+			
+		&__text
+			display block
+		
+		&__bg-image.bg-image
+			// right 50%
+			// width 50%
+			min-width auto
+			
+		&__body
+			background-color #fff
+	
+	&__filter
+		position relative
+		z-index 9
+		
+		@media screen and (min-width: 768px)
+		
+			display none

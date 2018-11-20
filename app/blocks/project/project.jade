@@ -1,0 +1,25 @@
+mixin project()
+	+b.project&attributes(attributes)
+
+		.filter.project__filter
+		.container.project__container
+
+			.columns
+				.column.project__hero
+					img.bg-image.project__bg-image(src='./assets/images/project-1.png')
+	
+				.column
+					.about__hero-body.project__body
+
+						+btn()(class='project__btn_contact')
+							|Разработка ПО
+
+						h3.project__title
+							|Создание интернет-магазина и crm-системы для учета покупок
+
+						p.project__text
+							|Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
+
+						+btn()(class='project__btn')
+							|Подробнее
+		block

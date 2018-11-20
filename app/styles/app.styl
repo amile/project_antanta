@@ -11,11 +11,28 @@ import('../blocks/**/*')
 body 
 	font-family Fira Sans
 	
+.container-inner
+	
+	width 872px
+	
+	@media screen and (min-width: 768px)
+		width 1080px
+		
+	@media screen and (min-width: 1280px)
+		width 1280px
+	
+.overflow_hidden
+	overflow hidden
+	
 .flex-flow_column-md
 	flex-flow column
 	
 	@media screen and (min-width: 1280px)
 		flex-flow row
+		
+.flex-flow_row
+	display flex
+	flex-flow row
 
 .bg-image
 	position absolute
@@ -188,6 +205,9 @@ body
 	text-align center
 	overflow hidden
 	
+	&__title
+		margin-bottom 8px
+	
 	@media screen and (min-width: 768px)
 		height 592px
 	
@@ -211,6 +231,19 @@ body
 	padding-bottom 60px
 	background-color #F5F5F0
 	
+	&__title
+		margin-top 22px
+		margin-bottom 65px
+		font-size 20px
+		font-weight 700
+		line-height 1.6
+		text-align center
+	
+	@media screen and (min-width: 768px)
+		&__title
+			font-size 40px
+			line-height 48px
+	
 	@media screen and (min-width: 768px) and (max-width: 1280px)
 		.columns
 			flex-wrap wrap
@@ -220,13 +253,14 @@ body
 	
 .advantage
 	position relative
+	padding-bottom 40px
 	font-size 16px
 	color #242323
 	text-align center
 	overflow hidden
 	
 	&__hero
-		padding 33px 56px
+		padding 33px 0px
 		overflow hidden
 		
 	&__hero-body
@@ -351,13 +385,21 @@ body
 			font-size 12px
 			line-height 1.5
 		
-.principles__title
-	margin-top 22px
-	margin-bottom 65px
-	font-size 40px
-	font-weight 700
-	line-height 48px
-	text-align center
+.services
+	padding-top 23px
+	padding-bottom 76px
+	
+	&__title
+		color #242424
+	
+	@media screen and (min-width: 768px)
+		padding-top 62px
+		padding-bottom 86px
+		
+	@media screen and (min-width: 1280px)
+		padding-top 100px
+		padding-bottom 76px
+	
 
 .principle__icon
 	display block

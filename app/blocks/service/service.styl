@@ -1,0 +1,90 @@
+.service
+	display block
+	
+	position relative
+	width 280px
+	
+	padding-bottom 24px
+	overflow hidden
+	
+	&__img
+		width 100%
+		height auto
+	
+	&__body
+		position relative
+		z-index 10
+		padding 40px 0 35px 20px
+		color #242424
+		background-color $logo-color_yellow
+		background-image url('../images/service-body.png')
+		background-repeat no-repeat
+		background-position 0 100%
+		background-size contain
+	
+	&__body-wrapper
+		position absolute
+		left 0
+		bottom 24px
+		
+		right 0
+		
+	&__title
+		margin-bottom 24px
+		font-size 24px
+		font-weight 700
+		line-height 1
+		
+	&__text
+		font-size 16px
+		line-height 1.5
+		margin-bottom 12px
+	
+	&__btn
+		position absolute
+		bottom -24px
+		padding 16px 30px
+		font-size 16px
+		font-weight 500
+		color #fff
+		background-color #000
+		
+	@media screen and (min-width: 768px)
+		width 352px
+		
+		padding-right 32px
+		padding-bottom 83px
+		
+		&__body-wrapper
+			position absolute
+			left 15px
+
+			&::after
+				position absolute
+				top -20px
+				right 32px
+				bottom 0
+				width 100%
+				content ''
+				background-image url('../images/service-body-bg.png')
+				background-repeat no-repeat
+				background-position 0 0 
+				background-size cover
+
+	
+	@media screen and (min-width: 1280px)
+		width 406px
+	
+		&__body
+			padding 40px 5px 56px 40px
+			
+		&__body-wrapper
+			left 69px
+			bottom 24px
+			
+			right 0
+		
+	
+		
+	
+		
