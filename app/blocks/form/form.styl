@@ -1,0 +1,46 @@
+.form
+	display inline-block
+	margin 0 auto
+	padding 20px 10px
+	text-align left
+	// background-color $logo-color_yellow
+	background-image url('../images/form-bg_sm.png')
+	background-repeat no-repeat
+	background-size 100% 100%
+	
+	&__bg
+		padding 10px
+		background-color #fff
+
+	&__input
+		display block
+		width 280px
+		margin-bottom 14px
+		padding 11px 30px
+		font-size 16px
+		font-family inherit
+		line-height 24px
+		color #807C7C
+		border 1px solid #EDEDE8
+	
+	&__btn
+		padding 16px 30px
+		font-size 16px
+		font-weight 500
+		letter-spacing 1px
+	
+	@media screen and (min-width: 768px)
+		padding 20px 16px
+		background-image url('../images/form-bg.png')
+		
+		&__bg
+			padding 40px 30px
+		
+		&__input
+			width 360px
+			margin-bottom 1em
+			
+	@media screen and (min-width: 1280px)
+		float right
+	
+	

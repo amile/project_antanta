@@ -1,0 +1,75 @@
+.slide
+	position relative
+	display block
+	min-height 396px
+	
+	padding-top 19.375%
+	padding-bottom 52px
+	overflow hidden
+	
+
+	&__body
+		margin 0 auto
+		padding 0 20px
+		text-align center
+		color #fff
+		
+		
+		
+	&__title
+		margin-bottom 20px
+		font-size 20px
+		font-weight 700
+		line-height 28px
+		
+	&__text
+		margin-bottom 12px
+		font-size 16px
+		line-height 24px
+		
+	@media screen and (min-width: 768px)
+		padding-bottom 62px
+		
+		&__body
+			padding 0 70px
+	
+		&__title
+			margin-bottom 20px
+			font-size 28px
+			line-height 36px
+			
+		&__text
+			margin-bottom 28px
+			font-size 20px
+			line-height 1.6em
+			
+		&__btn
+			margin-bottom 76px
+			
+	@media screen and (min-width: 1280px)
+		padding-top 12.0312%
+		
+		&::after
+			position absolute
+			left 42.5781%
+			bottom -1px
+			width 79px
+			height 122px
+			content ''
+			background-image url('../images/slide-emblem.png')
+			background-repeat no-repeat
+		
+		&__bg-image.bg-image
+			left 42.5781%
+		
+		&__body
+			padding-left 0
+			text-align left
+			
+			
+		&__title
+			color #242323
+			
+		&__text
+			color #4D4A4A
+		

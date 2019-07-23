@@ -6,15 +6,36 @@ include /blocks/footer/footer
 include /blocks/btn/btn
 include /blocks/service/service
 include /blocks/project/project
+include /blocks/slide/slide
+include /blocks/form/form
 
 block head
 	- var pageTitle = 'Antanta';
 
 block content
 	- var phone = '+7 (495) 512-32-56';
+
+	- var email = 'hello@antanta.com';
+
 	- var menuItems = ['О нас', 'Философия', 'Услуги', 'Проекты'];
 
 	+header(phone, menuItems)
+
+
+	section.slideshow
+		+slide()
+		.container
+			.columns
+				.column.is-5-widescreen.slideshow__nav-wrapper
+					.nav.carousel__nav.slideshow__carousel-nav
+						.nav__out.nav__out_active.slideshow__nav-out_active
+							span.nav__inner.nav__inner_active.slideshow__nav-inner.slideshow__nav-inner_active
+						.nav__out.slideshow__nav-out
+							span.nav__inner.slideshow__nav-inner
+						.nav__out.slideshow__nav-out
+							span.nav__inner.slideshow__nav-inner
+				.column.display-none-column_sm-md
+
 
 	section.about
 			.container
@@ -85,10 +106,11 @@ block content
 				.column.display-none-column_sm-md
 	
 	section.services
-		.container.overflow_hidden
+		.container
 			h2.services__title.principles__title
 				|Наши услуги
-			.container-inner
+	
+			.container-inner.services__carousel
 				.columns.flex-flow_row
 					.column
 						+service()
@@ -96,9 +118,32 @@ block content
 						+service()
 					.column
 						+service()
+				.nav.carousel__nav
+					.nav__out.nav__out_active.nav__out_arrow
+						span.nav__inner.nav__inner_arrow.nav__inner_arrow-left
+					.nav__out.nav__out_active.nav__out_arrow
+						span.nav__inner.nav__inner_arrow.nav__inner_arrow-right
+				
 
 	section.projects
-		+project()
+		.container
+			.columns
+				.column.is-3-tablet
+					.projects__title-wrapper
+						.projects__title-bg
+						h2.services__title.principles__title.projects__title
+							| Наши проекты
+				.column.display-none-column_sm.gradient
+
+			.projects__carousel
+				+project()
+				.nav.carousel__nav.projects__carousel-nav
+					.nav__out.nav__out_active
+						span.nav__inner.nav__inner_active
+					.nav__out
+						span.nav__inner
+					.nav__out
+						span.nav__inner
 
 	section.principles
 			.container
@@ -127,6 +172,29 @@ block content
 						span.principle__icon
 						p.principle__text
 							| Нести полную ответственность за результат нашей работы
+
+	section#contact.contact
+		.container
+			.columns.flex-flow_column-md
+				.column
+					.contact__body
+						h2.contact__title
+							| Мы всегда рады новым вызовам!
+
+						p.contact__text
+							| Оставьте заявку или вопрос в форме или свяжитесь с нами удобным для Вас способом:
+
+						.contact__items-wrapper
+							p.contact__item.contact__item
+								span.contact__item-icon.contact__item-icon_phone
+								= phone
+
+							p.contact__item.contact__item
+								span.contact__item-icon.contact__item-icon_email
+								= email
+
+				.column
+					+form()(class='contact__form')
 
 
 	+footer

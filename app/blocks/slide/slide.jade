@@ -1,0 +1,16 @@
+mixin slide()
+	+b.slide&attributes(attributes)
+		img.bg-image.slide__bg-image(src='./assets/images/slide-1.png')
+		.filter
+		.container
+			.columns
+				.column.is-5-widescreen
+					.slide__body
+						.slide__title
+							| Модернизация или замена любого программного обеспечения:
+						.slide__text
+							| Обновление ПО, разработка продуктов, отвечающих самым современным требованиям и условиям ведения бизнеса.
+						+btn()(class='advantage__btn slide__btn')
+							| Подробнее
+				.column.display-none-column_sm-md
+		block

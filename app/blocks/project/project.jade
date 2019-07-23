@@ -1,25 +1,26 @@
 mixin project()
 	+b.project&attributes(attributes)
 
-		.filter.project__filter
-		.container.project__container
-
-			.columns
-				.column.project__hero
-					img.bg-image.project__bg-image(src='./assets/images/project-1.png')
+			.columns.project__columns
+				.column.is-7-desktop
+					.project__hero-wrapper
+						.project__hero
+							img.bg-image.project__bg-image(src='./assets/images/project-1.png')
+							.filter.project__filter
 	
 				.column
-					.about__hero-body.project__body
+					.project__body-wrapper
+						.project__body
 
-						+btn()(class='project__btn_contact')
-							|Разработка ПО
+							+btn()(class='project__btn_contact')
+								|Разработка ПО
 
-						h3.project__title
-							|Создание интернет-магазина и crm-системы для учета покупок
+							h3.project__title
+								|Создание интернет-магазина и crm-системы для учета покупок
 
-						p.project__text
-							|Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
+							p.project__text
+								|Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
 
-						+btn()(class='project__btn')
-							|Подробнее
+							+btn()(class='project__btn')
+								|Подробнее
 		block

@@ -1,25 +1,37 @@
 .project
+	position relative
 	display block
 	
-	position relative
 	padding 36px 0
 	overflow hidden
+		
+	&__bg-image
+		max-width none
+		
+	&__hero-wrapper
+		height 0
 	
-	&__body
+	&__body-wrapper
 		position relative
 		z-index 10
+		height 100%
+	
+	&__body
+		padding-left 16px
 	
 	&__title
-		max-width 235px
+		max-width 200px
+		
 		margin-bottom 78px
 		font-size 16px
 		font-weight 700
-		line-height 24px
-		color #fff
-		
+		line-height 1.5
+		color #fff	
 		
 	&__text
 		display none
+		font-size 16px
+		line-height 1.5
 		
 	&__btn
 		padding 16px 30px
@@ -29,7 +41,7 @@
 		background-color #000
 		
 	&__btn_contact
-		margin-top 63px
+		margin-top 39px
 		margin-bottom 24px
 		padding 15px 20px
 		font-size 14px
@@ -40,30 +52,76 @@
 		border 2px solid $logo-color_yellow
 	
 	@media screen and (min-width: 768px)
+		overflow visible
+		
+		&__filter
+			display none
+			
+		&__hero-wrapper
+			position relative
+			height 31.25em
+			
+			&::before
+				position absolute
+				left -21px
+				bottom 0
+				width 100%
+				height 73.2%
+				content ''
+				background-image url('../images/about-back.png')
+				background-repeat no-repeat
+	
 		&__hero
 			position relative
-			min-height 100%
-			margin-left .75rem
+			height 100%
+			
 			overflow hidden
+			
+		&__body
+			position absolute
+			top 50%
+			left 2em
+			max-width 26.25em
+			transform translateY(-50%)
 		
 		&__title
+			max-width none
+			
+			margin-bottom 1em
+			font-size 24px
+			line-height 1.33
 			color #242424
 			
 		&__text
 			display block
+			
+			margin-bottom 1em
+
+			
+	@media screen and (min-width: 1280px)
 		
 		&__bg-image.bg-image
-			// right 50%
-			// width 50%
-			min-width auto
+			left 0
+			
+		&__hero-wrapper
+			margin-left 14.6113% // 109px
+			height 31.25em
+			
+			&::before
+				top 109px
+				left -109px
+				width 72.84%
+				height 100%
 			
 		&__body
-			background-color #fff
-	
-	&__filter
-		position relative
-		z-index 9
+			top auto
+			left 6em
+			bottom 0
+			transform none
+			
+		&__title
+			margin-bottom 1em
 		
-		@media screen and (min-width: 768px)
-		
-			display none
+		&__text
+			margin-bottom 5em
+

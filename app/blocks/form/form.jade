@@ -1,0 +1,10 @@
+mixin form()
+	+b('form').form&attributes(attributes)
+		.form__bg
+			input.form__input(type='text' name='name' placeholder='Имя')
+			input.form__input(type='text' name='phone' placeholder='Номер телефона')
+			input.form__input(type='text' name='email' placeholder='E-mail')
+			input.form__input(type='text' name='theme' placeholder='Тема вопроса')
+			textarea.form__input(name='message' rows='3' placeholder='Сообщение')
+			input.btn.form__btn(type='submit' value='Отправить заявку')
+			block
