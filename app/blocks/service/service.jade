@@ -1,12 +1,10 @@
-mixin service()
+mixin service(item)
 	+b.service&attributes(attributes)
-		img.service__img(src='./assets/images/service-1.png')
+		img.service__img(src=item.src)
 		.service__body-wrapper
 			.service__body
-				h3.service__title
-					|Разработка ПО
-				p.service__text
-					|Любые программные решения для бизнеса. Автоматизируем процессы, увеличим эффективность бизнеса, повысим ваши конкурентные преимущества.
+				h3.service__title= item.title
+				p.service__text= item.text
 				.btn.service__btn
 					|Подробнее
 		block

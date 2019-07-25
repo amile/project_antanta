@@ -15,6 +15,12 @@ input
 	font-family inherit
 	border none
 	
+a
+	color inherit
+	text-decoration none
+	transition(all .3s ease 0s)
+	
+	
 .container
 	padding 0 20px
 	
@@ -97,6 +103,9 @@ input
 	@media screen and (min-width: 1280px)
 		display none
 		
+.mytitle
+	color $title-color
+		
 .carousel__nav
 	position absolute
 	left 50%
@@ -176,6 +185,7 @@ input
 
 .slideshow
 	position relative
+	margin-top 101px
 	overflow hidden
 	
 	&__carousel-nav
@@ -259,11 +269,7 @@ input
 	@media screen and (min-width: 1280px)
 			
 			&::before
-				width 455px
-	
-	
-		
-		
+				width 455px		
 		
 .about__hero
 	
@@ -281,8 +287,6 @@ input
 	@media screen and (min-width: 1280px)
 		margin-top 114px
 		margin-left 109px
-		
-
 		
 .about__img-wrapper
 	position relative
@@ -305,12 +309,11 @@ input
 	font-size 20px
 	line-height 32px
 	font-weight 700
-	color #000
+	color $title-color
 	
 	@media screen and (min-width: 768px)
 		font-size 40px
-		line-height 48px
-	
+		line-height 48px	
 	
 .about__text
 	font-size 16px
@@ -345,6 +348,9 @@ input
 	text-align center
 	overflow hidden
 	
+	@media screen and (min-width: 1280px)
+		margin-bottom 100px
+	
 	&__title
 		margin-bottom 8px
 	
@@ -373,7 +379,7 @@ input
 	
 	&__title
 		margin-top 22px
-		margin-bottom 65px
+		margin-bottom 2.5rem
 		font-size 20px
 		font-weight 700
 		line-height 1.6
@@ -381,6 +387,7 @@ input
 	
 	@media screen and (min-width: 768px)
 		&__title
+			margin-bottom 65px
 			font-size 40px
 			line-height 48px
 	
@@ -393,6 +400,7 @@ input
 	
 .advantage
 	position relative
+	padding-top .75rem
 	padding-bottom 40px
 	font-size 16px
 	color #242323
@@ -400,23 +408,23 @@ input
 	overflow hidden
 	
 	&__hero
-		padding 33px 0px
-		overflow hidden
+		// position relative
+		padding 31px 0px
+		// overflow-y hidden
 		
 	&__hero-body
-		display inline-block
+		// display inline-block
 		position relative
 		z-index 10
 		max-width 225px
 		margin auto
-		padding 29px 39px
+		padding 32px 26px
 		text-align left
 		background-color #fff
 		
 	&__body
-		
 		position relative
-		z-index 10
+		// z-index 10
 		max-width 280px
 		margin 0 auto
 		background-color #fff
@@ -445,11 +453,11 @@ input
 		padding 14px 50px
 		
 	&__bg-image
-			min-width 100%
-			max-width 320px
-			min-height 16em
-			height 16em // 39.02%
-			margin 0 auto
+		min-width 100%
+		max-width 320px
+		min-height 256px
+		max-height 256px
+		margin 0 auto
 		
 	
 	@media screen and (min-width: 500px)
@@ -468,10 +476,12 @@ input
 			min-height auto
 			height auto
 			max-width none
+			max-height none
 			
 		&__hero
 			position relative
 			padding 65px 108px
+			overflow hidden
 		
 		&__hero-body
 			max-width 408px
@@ -502,7 +512,7 @@ input
 		text-align left
 		
 		&__hero
-			padding 65px 90px
+			padding 65px 75px
 			
 		&__hero-body
 			padding 75px 35px
@@ -522,7 +532,7 @@ input
 	@media screen and (max-width: 767px)
 		&__subtitle_sm
 			margin 0
-			font-size 12px
+			font-size 14px
 			line-height 1.5
 		
 .services
@@ -599,6 +609,8 @@ input
 			left 53%
 			transform none
 			
+.principle__item
+	margin-bottom 1.5rem
 
 .principle__icon
 	display block
@@ -612,7 +624,10 @@ input
 		margin auto
 	
 .principle__text
+	max-width 15.625rem
 	margin-top 32px
+	margin-left auto
+	margin-right auto
 	font-size 16px
 	line-height 24px
 	

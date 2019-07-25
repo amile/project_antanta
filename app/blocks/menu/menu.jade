@@ -1,5 +1,6 @@
 mixin menu(items)
 	+b('ul').menu&attributes(attributes)
-		each item in items
-			li.menu__item= item
+		each item, key in items
+			li.menu__item
+				a.menu__item-link(href='#' + key)= item
 		block

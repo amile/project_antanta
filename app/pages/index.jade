@@ -17,10 +17,9 @@ block content
 
 	- var email = 'hello@antanta.com';
 
-	- var menuItems = ['О нас', 'Философия', 'Услуги', 'Проекты'];
+	- var menuItems = {'about': 'О нас', 'credo':'Философия', 'services': 'Услуги', 'projects': 'Проекты'};
 
 	+header(phone, menuItems)
-
 
 	section.slideshow
 		+slide()
@@ -36,19 +35,18 @@ block content
 							span.nav__inner.slideshow__nav-inner
 				.column.display-none-column_sm-md
 
-
-	section.about
-			.container
-				.columns
-					.column.about__picture.display-none-column_sm
-						.about__img-wrapper
-							img.about__img(src='./assets/images/about.png')
-					.column.about__hero
-						.about__hero-body
-							h2.about__title
-								| Антанта — это
-							p.about__text
-								| крупная компания в сфере IT с большим опытом работы и командой квалифицированных специалистов. Наша профессия – комплексные решения для бизнеса, начиная от разработки программного обеспечения до его полноценного внедрения в жизнь. Осуществляем весь цикл работ, включая консультации, обучение персонала, экспертизу, модернизацию программного обеспечения.
+	section#about.about
+		.container
+			.columns
+				.column.about__picture.display-none-column_sm
+					.about__img-wrapper
+						img.about__img(src='./assets/images/about.png')
+				.column.about__hero
+					.about__hero-body
+						h2.about__title
+							| Антанта — это
+						p.about__text
+							| крупная компания в сфере IT с большим опытом работы и командой квалифицированных специалистов. Наша профессия – комплексные решения для бизнеса, начиная от разработки программного обеспечения до его полноценного внедрения в жизнь. Осуществляем весь цикл работ, включая консультации, обучение персонала, экспертизу, модернизацию программного  обеспечения.
 
 	section.automation
 		img.bg-image(src='./assets/images/automation.png')
@@ -65,32 +63,30 @@ block content
 				.column.display-none-column_sm-md
 
 	section.advantage
-			.container
-				.columns.flex-flow_column-md
-					.column
-						.advantage__hero
-							img.bg-image.advantage__bg-image(src='./assets/images/background_advantage.png')
-							.advantage__hero-body
-								h2.advantage__title
-									|&gt;200
-								h3.advantage__subtitle.advantage__subtitle_sm
-									|Реализованных проектов по высоконагруженным торговым площадкам
+		.container
+			.columns.flex-flow_column-md
+				.column
+					.advantage__hero
+						img.bg-image.advantage__bg-image(src='./assets/images/background_advantage.png')
+						.advantage__hero-body
+							h2.advantage__title
+								| &gt;200
+							h3.advantage__subtitle.advantage__subtitle_sm
+								| Реализованных проектов 
+								br 
+								| по высоконагруженным торговым площадкам		
+				.column
+					.advantage__body
+						h3.advantage__subtitle
+							| Одно из направлений нашей деятельности — создание мощных высоконагруженных торговых площадок, от разработки до отладки и запуска.
 
+						p.advantage__text
+							| Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
 
-						
-					.column
-						.advantage__body
-							h3.advantage__subtitle
-								|Одно из направлений нашей деятельности — создание мощных высоконагруженных торговых площадок, от разработки до отладки и запуска.
+						+btn(class='btn')
+							| оставить заявку		
 
-							p.advantage__text
-								|Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
-
-							+btn(class='btn')
-								|оставить заявку
-			
-
-	section.credo
+	section#credo.credo
 		img.bg-image(src='./assets/images/credo.png')
 		.filter
 		.container
@@ -104,28 +100,54 @@ block content
 							| Информационные технологии сегодня — это мощнейший инструмент развития бизнеса, без них не обходится не одна сфера деловой активности. Чем серьезнее и грамотнее компания использует IT, тем выше её успех и больше её конкурентные преимущества. Современные технологии, непрерывно развиваясь, дают нам в руки бесконечное число вариантов решения задач и поиска оптимальных моделей для повышения эффективности бизнеса и улучшения условий для работающих в нем людей.
 							
 				.column.display-none-column_sm-md
+
+	section.principles
+		.container
+			h2.mytitle.principles__title
+				| Принципы нашей работы
+
+			.columns
+				.column.principle__item
+					span.principle__icon
+					p.principle__text
+						| Максимально эффективно решать задачи, поставленные заказчиком
+				.column.principle__item
+					span.principle__icon
+					p.principle__text
+						| Постоянно развиваться и совершенствоваться в профессиональной сфере
+				.column.principle__item
+					span.principle__icon
+					p.principle__text
+						| Использовать лучшие современные технические решения в интересах клиента
+				.column.principle__item
+					span.principle__icon
+					p.principle__text
+						| Владеть знаниями во всех сферах IT на экспертном уровне
+				.column.principle__item
+					span.principle__icon
+					p.principle__text
+						| Нести полную ответственность за результат нашей работы
 	
-	section.services
+	section#services.services
 		.container
 			h2.services__title.principles__title
-				|Наши услуги
+				| Наши услуги
 	
 			.container-inner.services__carousel
 				.columns.flex-flow_row
 					.column
-						+service()
+						+service({'title': 'Разработка ПО', 'text': 'Любые программные решения для бизнеса. Автоматизируем процессы, увеличим эффективность бизнеса, повысим ваши конкурентные преимущества.', 'src': './assets/images/service-1.png'})
 					.column
-						+service()
+						+service({'title': 'Модернизация', 'text': 'Приведём любое программное обеспечение в соответствие с требованиями текущего момента. Обновление, замена, техническая поддержка на всех этапах внедрения и эксплуатации.', 'src': './assets/images/service-2.png'})
 					.column
-						+service()
+						+service({'title': 'Интеграция', 'text': 'Интеграция различных видов программного обеспечения, координация работы всех систем, обеспечение эффекта синергии от согласованного действия цифровых продуктов.', 'src': './assets/images/service-3.png'})
 				.nav.carousel__nav
 					.nav__out.nav__out_active.nav__out_arrow
 						span.nav__inner.nav__inner_arrow.nav__inner_arrow-left
 					.nav__out.nav__out_active.nav__out_arrow
 						span.nav__inner.nav__inner_arrow.nav__inner_arrow-right
-				
 
-	section.projects
+	section#projects.projects
 		.container
 			.columns
 				.column.is-3-tablet
@@ -144,34 +166,6 @@ block content
 						span.nav__inner
 					.nav__out
 						span.nav__inner
-
-	section.principles
-			.container
-				h2.principles__title
-					| Принципы нашей работы
-
-				.columns
-					.column
-						span.principle__icon
-
-						p.principle__text
-							| Максимально эффективно решать задачи, поставленные заказчиком
-					.column
-						span.principle__icon
-						p.principle__text
-							| Постоянно развиваться и совершенствоваться в профессиональной сфере
-					.column
-						span.principle__icon
-						p.principle__text
-							| Использовать лучшие современные технические решения в интересах клиента
-					.column
-						span.principle__icon
-						p.principle__text
-							| Владеть знаниями во всех сферах IT на экспертном уровне
-					.column
-						span.principle__icon
-						p.principle__text
-							| Нести полную ответственность за результат нашей работы
 
 	section#contact.contact
 		.container
@@ -195,6 +189,5 @@ block content
 
 				.column
 					+form()(class='contact__form')
-
 
 	+footer
