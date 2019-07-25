@@ -101,32 +101,19 @@ block content
 							
 				.column.display-none-column_sm-md
 
+	- var principles = ['Максимально эффективно решать задачи, поставленные заказчиком', 'Постоянно развиваться и совершенствоваться в профессиональной сфере', 'Использовать лучшие современные технические решения в интересах клиента', 'Владеть знаниями во всех сферах IT на экспертном уровне', 'Нести полную ответственность за результат нашей работы']
+
 	section.principles
 		.container
 			h2.mytitle.principles__title
 				| Принципы нашей работы
 
 			.columns
-				.column.principle__item
-					span.principle__icon
-					p.principle__text
-						| Максимально эффективно решать задачи, поставленные заказчиком
-				.column.principle__item
-					span.principle__icon
-					p.principle__text
-						| Постоянно развиваться и совершенствоваться в профессиональной сфере
-				.column.principle__item
-					span.principle__icon
-					p.principle__text
-						| Использовать лучшие современные технические решения в интересах клиента
-				.column.principle__item
-					span.principle__icon
-					p.principle__text
-						| Владеть знаниями во всех сферах IT на экспертном уровне
-				.column.principle__item
-					span.principle__icon
-					p.principle__text
-						| Нести полную ответственность за результат нашей работы
+				each item, index in principles
+					.column.principle__item
+						span.principle__icon
+							span.principle__icon-in(class='principle__icon-in_' + (index + 1))
+						p.principle__text= item
 	
 	section#services.services
 		.container

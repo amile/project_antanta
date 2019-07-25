@@ -616,9 +616,27 @@ a
 	display block
 	width 58px
 	height 59px
-	background-image url('../images/princip_in1.png'), url('../images/princ_out.png')
-	background-repeat no-repeat, no-repeat
-	background-position center, 0 0 
+	line-height 59px
+	text-align center
+	background-image url('../images/princ_out.png')
+	background-repeat no-repeat
+	background-position 0 0 
+	
+	&-in
+		display inline-block
+		vertical-align middle
+		background-repeat no-repeat
+		
+		&_1
+			sprite $princip_in1
+		&_2
+			sprite $princip_in2
+		&_3
+			sprite $princip_in3
+		&_4
+			sprite $princip_in4
+		&_5
+			sprite $princip_in5
 	
 	@media screen and (max-width: 1280px)
 		margin auto
