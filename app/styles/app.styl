@@ -203,7 +203,10 @@ a
 			position relative
 			
 		&__carousel-nav
+			left 15px
 			bottom 5px
+			transform none
+			
 		
 	@media screen and (max-width: 1279px)
 	
@@ -232,9 +235,12 @@ a
 	
 .about
 	
-	padding-top 24px
+	padding-top 2rem
 	padding-bottom 50px
 	overflow hidden
+	
+	@media screen and (min-width: 768px) and (max-width: 1279px)
+		margin-top 70px
 	
 	@media screen and (min-width: 1280px)
 		padding-top 124px

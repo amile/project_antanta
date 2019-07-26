@@ -22,20 +22,23 @@ block content
 	+header(phone, menuItems)
 
 	section.slideshow
-		+slide()
+		+slide({'title': 'Модернизация или замена любого программного обеспечения:', 'text': 'Обновление ПО, разработка продуктов, отвечающих самым современным требованиям и условиям ведения бизнеса.', 'img': './assets/images/slide-1.png'})(class='slide_active')
+		+slide({'title': 'Мы создаём программное обеспечение для бизнеса', 'text': 'Задачи любой сложности и масштаба, самые современные технологии, минимальные сроки, максимальная эффективность.', 'img': './assets/images/slide-2.png'})
+		+slide({'title': 'Консультативные услуги в области IT и электронной коммерции', 'text': 'Аналитика, экспертиза, аутстаффинг специалистов, решение IT-задач любой сложности в сфере электронной коммерции. ', 'img': './assets/images/slide-3.png'})
 		.container
 			.columns
 				.column.is-5-widescreen.slideshow__nav-wrapper
 					.nav.carousel__nav.slideshow__carousel-nav
-						.nav__out.nav__out_active.slideshow__nav-out_active
+						.nav__out.nav__out_active.slideshow__nav-out.slideshow__nav-out_active
 							span.nav__inner.nav__inner_active.slideshow__nav-inner.slideshow__nav-inner_active
 						.nav__out.slideshow__nav-out
 							span.nav__inner.slideshow__nav-inner
 						.nav__out.slideshow__nav-out
 							span.nav__inner.slideshow__nav-inner
+					span#about
 				.column.display-none-column_sm-md
 
-	section#about.about
+	section.about
 		.container
 			.columns
 				.column.about__picture.display-none-column_sm
@@ -84,9 +87,11 @@ block content
 							| Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
 
 						+btn(class='btn')
-							| оставить заявку		
+							| оставить заявку
 
-	section#credo.credo
+					span#credo		
+
+	section.credo
 		img.bg-image(src='./assets/images/credo.png')
 		.filter
 		.container
@@ -128,13 +133,16 @@ block content
 						+service({'title': 'Модернизация', 'text': 'Приведём любое программное обеспечение в соответствие с требованиями текущего момента. Обновление, замена, техническая поддержка на всех этапах внедрения и эксплуатации.', 'src': './assets/images/service-2.png'})
 					.column
 						+service({'title': 'Интеграция', 'text': 'Интеграция различных видов программного обеспечения, координация работы всех систем, обеспечение эффекта синергии от согласованного действия цифровых продуктов.', 'src': './assets/images/service-3.png'})
+				span#projects
 				.nav.carousel__nav
 					.nav__out.nav__out_active.nav__out_arrow
 						span.nav__inner.nav__inner_arrow.nav__inner_arrow-left
 					.nav__out.nav__out_active.nav__out_arrow
 						span.nav__inner.nav__inner_arrow.nav__inner_arrow-right
 
-	section#projects.projects
+			
+
+	section.projects
 		.container
 			.columns
 				.column.is-3-tablet
