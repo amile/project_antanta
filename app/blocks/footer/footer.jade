@@ -1,12 +1,12 @@
 include ../logo/logo
 
-mixin footer()
+mixin footer(email)
 	+b.footer&attributes(attributes)
 		.container
 			.columns
 				.column.column-5.column-order_last
 					p.contacts.footer__contacts
-						span.footer__contacts-mail hello@antanta.tech 
+						span.footer__contacts-mail info@antanta.tech
 						|+7 (495) 512-32-56
 				.column.column-2
 					+logo(true)(class='footer__logo')
