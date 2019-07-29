@@ -76,10 +76,10 @@ a
 
 .bg-image
 	position absolute
-	top 0px
-	left 0px
-	bottom 0px
-	right 0px
+	top -9999px
+	left -9999px
+	bottom -9999px
+	right -9999px
 	min-width 100%
 	min-height 100%
 	margin auto
@@ -119,6 +119,9 @@ a
 	width 40px
 	height 40px
 	margin-right 5px
+	
+	&:last-child
+		margin-right 0
 	
 	&:hover
 		.nav__inner
@@ -222,14 +225,14 @@ a
 		
 		&__nav-out:hover
 			
-			& .nav__inner
+			& .nav-inner
 				background-color #fff
 				opacity 1
 				
 		&__nav-out_active:hover
 			opacity .3
 			
-			& .nav__inner
+			& .nav-inner
 				background-color #fff
 				
 	
@@ -425,7 +428,7 @@ a
 		z-index 10
 		max-width 225px
 		margin auto
-		padding 32px 26px
+		padding 32px 25px
 		text-align left
 		background-color #fff
 		
@@ -443,7 +446,7 @@ a
 		letter-spacing 2.5px
 		
 	&__subtitle
-		margin-top .5em
+		margin-top 1rem
 		margin-bottom 1em
 		font-size 16px
 		line-height 1.5
@@ -460,6 +463,10 @@ a
 		padding 14px 50px
 		
 	&__bg-image
+		top 0
+		left 0
+		bottom 0 
+		right 0
 		min-width 100%
 		max-width 320px
 		min-height 256px

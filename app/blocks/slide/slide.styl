@@ -1,7 +1,8 @@
 .slide
 	position relative
 	display none
-	min-height 396px
+	min-width 320px
+	min-height 24.75rem
 	
 	padding-top 19.375%
 	padding-bottom 52px
@@ -9,6 +10,8 @@
 
 	transition(all 1.5s ease-in-out)
 	
+	&__bg-image
+		max-width none
 
 	&__body
 		margin 0 auto
@@ -16,7 +19,7 @@
 		color #fff	
 		
 	&__title
-		margin-bottom 20px
+		margin-bottom 1.125em
 		font-size 20px
 		font-weight 700
 		line-height 28px
@@ -31,7 +34,7 @@
 		
 	@media screen and (min-width: 330px)
 		&__body
-			padding 0 20px
+			padding 0 5px
 		
 	@media screen and (min-width: 768px)
 		min-height 620px
@@ -42,9 +45,12 @@
 			padding 0 70px
 	
 		&__title
-			margin-bottom 20px
+			margin-bottom 2.5em
 			font-size 28px
 			line-height 36px
+			
+			@media screen and (min-width: 768px) and (max-width: 1279px)
+				margin-top 2em
 			
 		&__text
 			margin-bottom 28px
@@ -53,6 +59,10 @@
 			
 		&__btn
 			margin-bottom 76px
+	
+	@media screen and (min-width: 768px) and (max-width: 1279px)
+		&__title
+			margin-top 2em
 			
 	@media screen and (min-width: 1280px)
 		padding-top 12.0312%
