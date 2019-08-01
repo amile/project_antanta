@@ -119,28 +119,29 @@ a
 	width 40px
 	height 40px
 	margin-right 5px
+	// transition all 0.1s ease
 	
 	&:last-child
 		margin-right 0
 	
-	&:hover
-		.nav__inner
-			background-color #4C4B4B
-	
 	&_active
 		border 1px solid #707070
 		border-radius 50%
-		
-		&:hover
-			opacity .5
 	
 	&_arrow
 		margin-right 16px
-		
+				
+	@media screen and (min-width: 769px)
 		&:hover
 			.nav__inner
-				background none
-		
+				background-color #4C4B4B
+				
+		&_active:hover
+			opacity .5
+			
+		&_arrow:hover
+			.nav__inner
+				background none		
 	
 .nav__inner
 	display inline-block
@@ -150,6 +151,7 @@ a
 	height 12px
 	background-color #EDEDE8
 	border-radius 50%
+	transition all 0.6s ease
 		
 	&_active
 		background-color #4C4B4B
@@ -215,27 +217,28 @@ a
 	
 		&__nav-out_active
 			border-color #fff
-			
+								
 		&__nav-inner
 			background-color #fff
 			opacity .3
 			
 		&__nav-inner_active
 			opacity 1
-		
+			
+	@media screen and (min-width: 769px) and (max-width: 1279px)
+			
 		&__nav-out:hover
 			
-			& .nav-inner
+			& .slideshow__nav-inner
 				background-color #fff
 				opacity 1
-				
+		
 		&__nav-out_active:hover
-			opacity .3
+			opacity 0.3
 			
-			& .nav-inner
+			& .slideshow__nav-inner
 				background-color #fff
-				
-	
+
 .about
 	
 	padding-top 2rem
@@ -253,13 +256,13 @@ a
 	display none
 	
 	@media screen and (min-width: 768px)
-			display block
+		display block
 			
 .display-none-column_sm-md
 	display none
 	
 	@media screen and (min-width: 1280px)
-			display block
+		display block
 			
 			
 .about__picture
@@ -567,6 +570,27 @@ a
 		
 .projects
 	
+	/// test
+	&__wrapper_flex
+		display flex
+		transform translate(0)
+		
+	&__item_flex
+		flex 0 0 100%
+		min-height 100px
+		transition all 1.4s ease
+		
+		@media screen and (min-width: 768px)
+			padding 0 24px
+			
+	&__container_carousel
+		margin-top 2rem
+		
+		@media screen and (min-width: 768px) and (max-width: 1279px)
+			padding-left 0
+		
+	////
+	
 	&__title
 		z-index 10
 		position relative
@@ -574,7 +598,7 @@ a
 
 	&__carousel
 		padding-bottom 85px
-				
+		overflow-x hidden
 				
 	@media screen and (min-width: 768px)
 		padding-top 10px

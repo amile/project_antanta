@@ -149,9 +149,28 @@ block content
 						h2.services__title.principles__title.projects__title
 							| Наши проекты
 				.column.display-none-column_sm.gradient
+		.container.projects__container_carousel
+			// .projects__carousel
+				.projects__item-wrapper
+					.projects__item
+						+project()
+				.nav.carousel__nav.projects__carousel-nav
+					.nav__out.nav__out_active
+						span.nav__inner.nav__inner_active
+					.nav__out
+						span.nav__inner
+					.nav__out
+						span.nav__inner
 
 			.projects__carousel
-				+project()
+				.projects__wrapper_flex
+					.projects__item_flex
+						+project(1)
+					.projects__item_flex
+						+project(2)
+					.projects__item_flex
+						+project(3)
+
 				.nav.carousel__nav.projects__carousel-nav
 					.nav__out.nav__out_active
 						span.nav__inner.nav__inner_active

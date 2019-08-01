@@ -4,7 +4,7 @@
 	min-width 320px
 	min-height 24.75rem
 	
-	padding-top 19.375%
+	padding-top 15.5%
 	padding-bottom 52px
 	overflow hidden
 
@@ -35,22 +35,16 @@
 	@media screen and (min-width: 330px)
 		&__body
 			padding 0 5px
+			max-width 420px
 		
 	@media screen and (min-width: 768px)
 		min-height 620px
 		
 		padding-bottom 62px
-		
-		&__body
-			padding 0 70px
 	
 		&__title
-			margin-bottom 2.5em
 			font-size 28px
 			line-height 36px
-			
-			@media screen and (min-width: 768px) and (max-width: 1279px)
-				margin-top 2em
 			
 		&__text
 			margin-bottom 28px
@@ -59,13 +53,27 @@
 			
 		&__btn
 			margin-bottom 76px
+			
+	@media screen and (min-width: 768px) and (max-width: 1054px)
+		&__body
+			max-width 33rem
 	
-	@media screen and (min-width: 768px) and (max-width: 1279px)
+	@media screen and (min-width: 1055px) and (max-width: 1279px)
+		&__body
+			max-width 40rem
+		
 		&__title
-			margin-top 2em
+			margin auto
+			max-width 36rem
+			
+	@media screen and (min-width: 768px) and (max-width: 1279px)
+			
+		&__title
+			margin-top 3rem
+			margin-bottom 3rem
 			
 	@media screen and (min-width: 1280px)
-		padding-top 12.0312%
+		padding-top 11.5%
 		
 		&::after
 			position absolute
