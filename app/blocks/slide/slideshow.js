@@ -20,10 +20,13 @@ Slideshow.prototype.intervalSlideshow = function () {
 };
 
 Slideshow.prototype.nextSlide = function () {
+	// $(this.slides[this.currentSlide]).fadeOut();
 	this.slides[this.currentSlide].className = this.slideClassName;
+	//this.slides[this.currentSlide].style.display = 'none';
 	this.bullets[this.currentSlide].className = this.bulletClassName;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassName;
 	this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+	//$(this.slides[this.currentSlide]).fadeIn('slow');
 	this.slides[this.currentSlide].className = this.slideClassNameActive;
 	this.bullets[this.currentSlide].className = this.bulletClassNameActive;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassNameActive;
@@ -45,7 +48,5 @@ Slideshow.prototype.userClick = function () {
 		});
 	}
 };
+export default Slideshow;
 
-const slider = new Slideshow('slideshow');
-
-slider.intervalSlideshow();

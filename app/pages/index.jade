@@ -40,7 +40,7 @@ block content
 
 	section.about
 		.container
-			.columns
+			.columns.flex-flow_md
 				.column.about__picture.display-none-column_sm
 					.about__img-wrapper
 						img.about__img(src='./assets/images/about.png')
@@ -73,7 +73,7 @@ block content
 						img.bg-image.advantage__bg-image(src='./assets/images/background_advantage.png')
 						.advantage__hero-body
 							h2.advantage__title
-								| &gt;200
+								| &gt;20&nbsp;
 							h3.advantage__subtitle.advantage__subtitle_sm
 								| Реализованных проектов 
 								br 
@@ -113,7 +113,7 @@ block content
 			h2.mytitle.principles__title
 				| Принципы нашей работы
 
-			.columns
+			.columns.flex-flow_md
 				each item, index in principles
 					.column.principle__item
 						span.principle__icon
@@ -142,7 +142,7 @@ block content
 
 	section.projects
 		.container
-			.columns
+			.columns.flex-flow_md
 				.column.is-3-tablet
 					.projects__title-wrapper
 						.projects__title-bg

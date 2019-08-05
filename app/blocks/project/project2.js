@@ -1,3 +1,5 @@
+// import $ from 'jquery';
+
 function SlideshowProject(element) {
 	this.slider = document.getElementsByClassName(element)[0];
 	this.sliderWrapper = this.slider.getElementsByClassName('projects__wrapper_flex')[0];
@@ -19,55 +21,64 @@ function SlideshowProject(element) {
 }
 
 SlideshowProject.prototype.intervalSlideshow = function () {
+	Array.prototype.forEach.call(this.slides, (slide, index) => {
+		slide.style.order = String(index);
+
+	});
 	this.interval = setInterval(this.nextSlide.bind(this), 5000);
 	this.userClick();
 };
 
-SlideshowProject.prototype.resizeSlideshow = function () {
+/* SlideshowProject.prototype.resizeSlideshow = function () {
 	const self = this;
 	window.addEventListener('resize', function () {
 		clearInterval(self.interval);
 		self.slideWidth = self.slides[0].offsetWidth;
-		self.sliderWrapper.style.transform = 'translate(-' + (self.currentSlide * 100) + '%)';
-		self.interval = setInterval(self.nextSlide.bind(self), 5000);
+		// self.sliderWrapper.style.transform = 'translate(-' + (self.currentSlide * 100) + '%)';
+		self.interval = setInterval(self.nextSlide.bind(self), 4000);
 	});
-};
+};*/
 
 SlideshowProject.prototype.nextSlide = function () {
-	// this.slides[this.currentSlide].style.opacity = '0';
-	if (this.currentSlide === (this.numSlides - 1)) {
-		Array.prototype.forEach.call(this.slides, (slide, index) => {
-			// slide.style.order = String(index);
-		});
-	}
+	Array.prototype.forEach.call(this.slides, (slide, index) => {
+		if (index === this.currentSlide) {
+			slide.style.order = String(this.numSlides - 1);
+			// $(this.slides[this.currentSlide]).fadeOut();
+		}
+		else {
+			const order = slide.style.order;
+			slide.style.order = String(order - 1);
+		}
+	});
 	this.bullets[this.currentSlide].className = this.bulletClassName;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassName;
 	this.currentSlide = (this.currentSlide + 1) % this.numSlides;
-	const translate = this.currentSlide * this.slideWidth * (-1);
-	console.log(this.currentSlide);
-	this.sliderWrapper.style.transform = 'translate(' + translate + 'px)';
-	// this.slides[this.currentSlide].style.opacity = '1';
+	// $(this.slides[this.currentSlide]).fadeIn('slow');
 	this.bullets[this.currentSlide].className = this.bulletClassNameActive;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassNameActive;
 };
 
 SlideshowProject.prototype.userClick = function () {
 	const self = this;
-	for (let ind = 0; ind < self.bullets.length; ind++) {
-		self.bullets[ind].addEventListener('click', function () {
+	for (let current = 0; current < self.bullets.length; current++) {
+		self.bullets[current].addEventListener('click', function () {
 			clearInterval(self.interval);
-			// self.slides[self.currentSlide].style.opacity = '0';
+			self.slides[current].style.order = '0';
+			Array.prototype.forEach.call(self.slides, (slide, index) => {
+				if (index < current) {
+					slide.style.order = String(self.numSlides - (current - index));
+				}
+				else if (index > current){
+					slide.style.order = String(index - current);
+				}
+			});
 			self.bullets[self.currentSlide].className = self.bulletClassName;
 			self.bulletsIn[self.currentSlide].className = self.bulletInClassName;
-			const translate = ind * self.slideWidth * (-1);
-			self.sliderWrapper.style.transform = 'translate(' + translate + 'px)';
-			// self.slides[ind].style.opacity = '1';
-			self.bullets[ind].className = self.bulletClassNameActive;
-			self.bulletsIn[ind].className = self.bulletInClassNameActive;
-			self.currentSlide = ind;
-			self.interval = setInterval(self.nextSlide.bind(self), 5000);
+			self.bullets[current].className = self.bulletClassNameActive;
+			self.bulletsIn[current].className = self.bulletInClassNameActive;
+			self.currentSlide = current;
+			self.interval = setInterval(self.nextSlide.bind(self), 4000);
 		});
 	}
 };
 export default SlideshowProject;
-
