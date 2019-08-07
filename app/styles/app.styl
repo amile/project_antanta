@@ -478,6 +478,15 @@ a
 		
 	&__btn
 		padding 14px 50px
+		border 2px solid transparent
+		transition all 0.6s ease
+		
+		&:hover
+			background-color #fff
+			border 2px solid $logo-color_yellow
+		
+			.advantage__btn-link
+				color #807C7C
 		
 	&__bg-image
 		top 0
@@ -570,18 +579,108 @@ a
 	padding-top 23px
 	padding-bottom 36px
 	
+	&__container
+		padding-right 0
+	
 	&__carousel
+		max-width 300px
+		margin 0 auto
 		padding-bottom 110px
+		overflow hidden
 	
 	&__title
 		color #242424
+		
+	&__wrapper_flex
+		display flex
+		position relative
+		left calc(-93.33% - 20px)
+		transform translate(93.33%)
+		
+	.is-reversing
+		transform translate(-93.33%)
 	
-	@media screen and (min-width: 768px)
+	.transform_none
+		transform none
+		transition transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)
+
+	&__item_flex
+		flex 0 0 93.33%
+		order 1
+		margin-right 16px
+		
+	.previous
+		order 0
+		
+	@media screen and (min-width: 620px)
+		&__carousel
+			max-width 600px	
+	
+	@media screen and (min-width: 620px)
 		padding-top 62px
+		
+		&__wrapper_flex
+			left calc(-47% - 20px)
+			transform translate(47%)
+			
+		.is-reversing
+			transform translate(calc(-47% - 16px))
+			
+		.transform_none
+			transform none
+
+		&__item_flex
+			flex 0 0 47%
+			margin-right 16px
+			
+	@media screen and (min-width: 768px)
+		&__carousel
+			max-width 744px
 		
 	@media screen and (min-width: 1280px)
 		padding-top 100px
 		
+		&__container
+			padding 0 24px
+		
+		&__carousel
+			max-width 882px
+		
+		&__wrapper_flex
+			left calc(-46% - 30px)
+			transform translate(46%)
+			
+		.is-reversing
+			transform translate(-46%)
+			
+		.transform_none
+			transform none
+		
+		&__item_flex
+			flex 0 0 46%
+			margin-right 30px
+			
+	@media screen and (min-width: 1340px)
+		
+			
+		&__carousel
+			max-width none
+			
+		&__wrapper_flex
+			left calc(-30.29% - 30px)
+			transform translate(30.29%)
+			
+		.is-reversing
+			transform translate(-30.29%)
+		
+		.transform_none
+			transform none
+		
+		&__item_flex
+			flex 0 0 30.29%
+			margin-right 30px
+		
+
 .projects
 	
 	/// test
