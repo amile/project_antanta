@@ -1,4 +1,4 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 
 function SlideshowProject(element) {
 	this.slider = document.getElementsByClassName(element)[0];
@@ -6,10 +6,11 @@ function SlideshowProject(element) {
 	this.slides = this.slider.getElementsByClassName('projects__item_flex');
 	this.bullets = this.slider.getElementsByClassName('nav__out');
 	this.bulletsIn = this.slider.getElementsByClassName('nav__inner');
-	this.currentSlide = 0;
 	this.numSlides = this.slides.length;
-	this.slideWidth = this.slides[0].offsetWidth;
-	this.sliderWrapperWidth = this.slideWidth * this.numSlides;
+	this.currentSlide = 0;
+	this.prevSlide = this.numSlides - 1;
+	// this.slideWidth = this.slides[0].offsetWidth;
+	// this.sliderWrapperWidth = this.slideWidth * this.numSlides;
 	this.slideClassName = this.slides[this.currentSlide + 1].className;
 	this.slideClassNameActive = this.slides[this.currentSlide].className;
 	this.bulletClassName = this.bullets[this.currentSlide + 1].className;
@@ -22,8 +23,12 @@ function SlideshowProject(element) {
 
 SlideshowProject.prototype.intervalSlideshow = function () {
 	Array.prototype.forEach.call(this.slides, (slide, index) => {
-		slide.style.order = String(index);
-
+		if (index === this.prevSlide) {
+			slide.style.order = '0';
+		}
+		else {
+			slide.style.order = String(index + 1);
+		}
 	});
 	this.interval = setInterval(this.nextSlide.bind(this), 5000);
 	this.userClick();
@@ -41,42 +46,58 @@ SlideshowProject.prototype.intervalSlideshow = function () {
 
 SlideshowProject.prototype.nextSlide = function () {
 	Array.prototype.forEach.call(this.slides, (slide, index) => {
-		if (index === this.currentSlide) {
+		if (index === this.prevSlide) {
 			slide.style.order = String(this.numSlides - 1);
-			// $(this.slides[this.currentSlide]).fadeOut();
 		}
 		else {
 			const order = slide.style.order;
 			slide.style.order = String(order - 1);
 		}
 	});
+	$(this.slider).addClass('background_none');
+	$(this.sliderWrapper).removeClass('is-transform_reverse');
+	$(this.sliderWrapper).removeClass('translate_none');
+	setTimeout(() => $(this.sliderWrapper).addClass('translate_none'), 50);
+	setTimeout(() => $(this.slider).removeClass('background_none'), 1000);
+	// setTimeout(() => $(this.slider).css('background-size', 'auto'), 50);
 	this.bullets[this.currentSlide].className = this.bulletClassName;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassName;
 	this.currentSlide = (this.currentSlide + 1) % this.numSlides;
-	// $(this.slides[this.currentSlide]).fadeIn('slow');
+	this.prevSlide = (this.prevSlide + 1) % this.numSlides;
 	this.bullets[this.currentSlide].className = this.bulletClassNameActive;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassNameActive;
 };
 
 SlideshowProject.prototype.userClick = function () {
 	const self = this;
-	for (let current = 0; current < self.bullets.length; current++) {
-		self.bullets[current].addEventListener('click', function () {
+	for (let bullet = 0; bullet < self.bullets.length; bullet++) {
+		self.bullets[bullet].addEventListener('click', function () {
 			clearInterval(self.interval);
-			self.slides[current].style.order = '0';
+			$(self.sliderWrapper).removeClass('is-transform is-transform_reverse');
+			self.prevSlide = (bullet - 1) >= 0 ? (bullet - 1) : (self.numSlides - 1);
+			self.slides[self.prevSlide].style.order = '0';
 			Array.prototype.forEach.call(self.slides, (slide, index) => {
-				if (index < current) {
-					slide.style.order = String(self.numSlides - (current - index));
+				if (index < self.prevSlide) {
+					slide.style.order = String(self.numSlides - (self.prevSlide - index));
 				}
-				else if (index > current){
-					slide.style.order = String(index - current);
+				else if (index > self.prevSlide){
+					slide.style.order = String(index - self.prevSlide);
 				}
 			});
+			if (bullet !== self.currentSlide) {
+				$(self.slider).addClass('background_none');
+				if (bullet < self.currentSlide) {
+					$(self.sliderWrapper).addClass('is-transform_reverse');
+				}
+				$(self.sliderWrapper).removeClass('translate_none');
+				setTimeout( () => $(self.sliderWrapper).addClass('translate_none'), 50);
+				setTimeout(() => $(self.slider).removeClass('background_none'), 1000);
+			}
 			self.bullets[self.currentSlide].className = self.bulletClassName;
 			self.bulletsIn[self.currentSlide].className = self.bulletInClassName;
-			self.bullets[current].className = self.bulletClassNameActive;
-			self.bulletsIn[current].className = self.bulletInClassNameActive;
-			self.currentSlide = current;
+			self.bullets[bullet].className = self.bulletClassNameActive;
+			self.bulletsIn[bullet].className = self.bulletInClassNameActive;
+			self.currentSlide = bullet;
 			self.interval = setInterval(self.nextSlide.bind(self), 4000);
 		});
 	}

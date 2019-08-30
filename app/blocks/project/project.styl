@@ -1,6 +1,8 @@
 .project
 	position relative
+	z-index 5
 	display block
+	min-height 24.625rem
 	
 	padding 36px 0
 	overflow hidden
@@ -50,6 +52,11 @@
 		text-transform none
 		background-color #fff
 		border 2px solid $logo-color_yellow
+		
+		&:hover
+			color #fff
+			background-color $logo-color_yellow
+			border-color transparent
 	
 	&__hero .index
 		position absolute
@@ -123,12 +130,15 @@
 		&__hero-wrapper
 			margin-left 14.6113% // 109px
 			height 31.25em
+			background-color #fff
 			
 			&::before
-				top 109px
-				left -109px
-				width 72.84%
-				height 100%
+				width 0
+				height 0
+				background-image none
+	
+		&__body-wrapper
+			// background-color #fff
 			
 		&__body
 			top auto
