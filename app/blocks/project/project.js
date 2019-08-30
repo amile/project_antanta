@@ -20,6 +20,7 @@ function SlideshowProject(element) {
 
 SlideshowProject.prototype.intervalSlideshow = function () {
 	this.interval = setInterval(this.nextSlide.bind(this), 5000);
+	this.resizeSlideshow();
 	this.userClick();
 };
 
@@ -34,6 +35,23 @@ SlideshowProject.prototype.resizeSlideshow = function () {
 };
 
 SlideshowProject.prototype.nextSlide = function () {
+	if (this.currentSlide === (this.numSlides - 1)) {
+		Array.prototype.forEach.call(this.slides, (slide, index) => {
+			// slide.style.order = String(index);
+		});
+	}
+	this.bullets[this.currentSlide].className = this.bulletClassName;
+	this.bulletsIn[this.currentSlide].className = this.bulletInClassName;
+	this.currentSlide = (this.currentSlide + 1) % this.numSlides;
+	const translate = this.currentSlide * this.slideWidth * (-1);
+	console.log(this.currentSlide);
+	this.sliderWrapper.style.transform = 'translate(' + translate + 'px)';
+	// this.slides[this.currentSlide].style.opacity = '1';
+	this.bullets[this.currentSlide].className = this.bulletClassNameActive;
+	this.bulletsIn[this.currentSlide].className = this.bulletInClassNameActive;
+};
+
+SlideshowProject.prototype.nextSlide2 = function () {
 	// this.slides[this.currentSlide].style.opacity = '0';
 	if (this.currentSlide === (this.numSlides - 1)) {
 		/* Array.prototype.forEach.call(this.slides, (slide, index) => {

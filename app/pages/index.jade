@@ -22,9 +22,9 @@ block content
 	+header(phone, menuItems)
 
 	section.slideshow
-		+slide({'title': 'Модернизация или замена любого программного обеспечения:', 'text': 'Обновление ПО, разработка продуктов, отвечающих самым современным требованиям и условиям ведения бизнеса.', 'img': './assets/images/slide-1.png'})(class='slide_active')
-		+slide({'title': 'Мы создаём программное обеспечение для бизнеса', 'text': 'Задачи любой сложности и масштаба, самые современные технологии, минимальные сроки, максимальная эффективность.', 'img': './assets/images/slide-2.png'})
-		+slide({'title': 'Консультативные услуги в области IT и электронной коммерции', 'text': 'Аналитика, экспертиза, аутстаффинг специалистов, решение IT-задач любой сложности в сфере электронной коммерции. ', 'img': './assets/images/slide-3.png'})
+		+slide({'title': 'Модернизация или замена любого программного обеспечения:', 'text': 'Обновление ПО, разработка продуктов, отвечающих самым современным требованиям и условиям ведения бизнеса.', 'img': './assets/images/slide-1.jpg'})(class='slide_active')
+		+slide({'title': 'Мы создаём программное обеспечение для бизнеса', 'text': 'Задачи любой сложности и масштаба, самые современные технологии, минимальные сроки, максимальная эффективность.', 'img': './assets/images/slide-2.jpg'})
+		+slide({'title': 'Консультативные услуги в области IT и электронной коммерции', 'text': 'Аналитика, экспертиза, аутстаффинг специалистов, решение IT-задач любой сложности в сфере электронной коммерции. ', 'img': './assets/images/slide-3.jpg'})
 		.container
 			.columns
 				.column.is-5-widescreen.slideshow__nav-wrapper
@@ -43,7 +43,7 @@ block content
 			.columns.flex-flow_md
 				.column.about__picture.display-none-column_sm
 					.about__img-wrapper
-						img.about__img(src='./assets/images/about.png')
+						img.about__img(src='./assets/images/about.jpg')
 				.column.about__hero
 					.about__hero-body
 						h2.about__title
@@ -52,7 +52,7 @@ block content
 							| крупная компания в сфере IT с большим опытом работы и командой квалифицированных специалистов. Наша профессия – комплексные решения для бизнеса, начиная от разработки программного обеспечения до его полноценного внедрения в жизнь. Осуществляем весь цикл работ, включая консультации, обучение персонала, экспертизу, модернизацию программного  обеспечения.
 
 	section.automation
-		img.bg-image(src='./assets/images/automation.png')
+		img.bg-image(src='./assets/images/automation.jpg')
 		.filter
 		.container
 			.columns
@@ -75,7 +75,7 @@ block content
 							h2.advantage__title
 								| &gt;20&nbsp;
 							h3.advantage__subtitle.advantage__subtitle_sm
-								| Реализованных проектов 
+								| Реализованных проектов 
 								br 
 								| по высоконагруженным торговым площадкам		
 				.column
@@ -86,13 +86,14 @@ block content
 						p.advantage__text
 							| Мы готовы разработать решения любой сложности с учётом индивидуальных особенностей вашего бизнеса и запросов ваших клиентов.
 
-						+btn(class='btn')
-							| оставить заявку
+						+btn(class='advantage__btn')
+							a.advantage__btn-link(href='#contact')
+								| оставить заявку
 		
 					#credo
 
 	section.credo
-		img.bg-image(src='./assets/images/credo.png')
+		img.bg-image(src='./assets/images/credo.jpg')
 		.filter
 		.container
 			.columns
@@ -124,21 +125,30 @@ block content
 		.container
 			h2.services__title.principles__title
 				| Наши услуги
-	
-			.container-inner.services__carousel
-				.columns.flex-flow_row
-					.column
-						+service({'title': 'Разработка ПО', 'text': 'Любые программные решения для бизнеса. Автоматизируем процессы, увеличим эффективность бизнеса, повысим ваши конкурентные преимущества.', 'src': './assets/images/service-1.png'})
-					.column
-						+service({'title': 'Модернизация', 'text': 'Приведём любое программное обеспечение в соответствие с требованиями текущего момента. Обновление, замена, техническая поддержка на всех этапах внедрения и эксплуатации.', 'src': './assets/images/service-2.png'})
-					.column
-						+service({'title': 'Интеграция', 'text': 'Интеграция различных видов программного обеспечения, координация работы всех систем, обеспечение эффекта синергии от согласованного действия цифровых продуктов.', 'src': './assets/images/service-3.png'})
-				span#projects
-				.nav.carousel__nav
-					.nav__out.nav__out_active.nav__out_arrow
-						span.nav__inner.nav__inner_arrow.nav__inner_arrow-left
-					.nav__out.nav__out_active.nav__out_arrow
-						span.nav__inner.nav__inner_arrow.nav__inner_arrow-right
+
+		.container.services__container
+
+				.services__carousel
+
+					.services__wrapper_flex.transform_none
+
+						.services__item_flex
+							+service({'title': 'Разработка ПО', 'text': 'Любые программные решения для бизнеса. Автоматизируем процессы, увеличим эффективность бизнеса, повысим ваши конкурентные преимущества.', 'src': './assets/images/service-1.jpg'})
+							
+						.services__item_flex 
+							+service({'title': 'Модернизация', 'text': 'Приведём любое программное обеспечение в соответствие с требованиями текущего момента. Обновление, замена, техническая поддержка на всех этапах внедрения и эксплуатации.', 'src': './assets/images/service-2.jpg'})
+
+						.services__item_flex 
+							+service({'title': 'Интеграция', 'text': 'Интеграция различных видов программного обеспечения, координация работы всех систем, обеспечение эффекта синергии от согласованного действия цифровых продуктов.', 'src': './assets/images/service-3.jpg'})
+
+						.services__item_flex.previous
+							+service({'title': 'IT-консалтинг', 'text': 'Квалифицированная поддержка, консультирование, обучение для руководства и персонала на всех этапах эксплуатации программных решений.', 'src': './assets/images/service-4.jpg'})
+
+					.nav.carousel__nav
+						.nav__out.nav__out_active.nav__out_arrow.nav_prev
+							span.nav__inner.nav__inner_arrow.nav__inner_arrow-left
+						.nav__out.nav__out_active.nav__out_arrow.nav_next
+							span.nav__inner.nav__inner_arrow.nav__inner_arrow-right
 
 	section.projects
 		.container
@@ -149,28 +159,18 @@ block content
 						h2.services__title.principles__title.projects__title
 							| Наши проекты
 				.column.display-none-column_sm.gradient
+
 		.container.projects__container_carousel
-			// .projects__carousel
-				.projects__item-wrapper
-					.projects__item
-						+project()
-				.nav.carousel__nav.projects__carousel-nav
-					.nav__out.nav__out_active
-						span.nav__inner.nav__inner_active
-					.nav__out
-						span.nav__inner
-					.nav__out
-						span.nav__inner
 
 			.projects__carousel
-				.projects__wrapper_flex
+				.projects__wrapper_flex.translate_none
 					.projects__item_flex
 						+project(1)
 					.projects__item_flex
 						+project(2)
 					.projects__item_flex
 						+project(3)
-
+						span#contact
 				.nav.carousel__nav.projects__carousel-nav
 					.nav__out.nav__out_active
 						span.nav__inner.nav__inner_active
@@ -178,6 +178,7 @@ block content
 						span.nav__inner
 					.nav__out
 						span.nav__inner
+
 
 	section#contact.contact
 		.container
@@ -188,8 +189,7 @@ block content
 							| Мы всегда рады новым вызовам!
 
 						p.contact__text
-							| Оставьте заявку или вопрос в форме или свяжитесь с нами удобным для Вас способом:
-
+							| Оставьте заявку или вопрос в форме или свяжитесь с нами удобным для Вас способом:				
 						.contact__items-wrapper
 							p.contact__item.contact__item
 								span.contact__item-icon.contact__item-icon_phone
@@ -197,9 +197,11 @@ block content
 
 							p.contact__item.contact__item
 								span.contact__item-icon.contact__item-icon_email
-								= email
+								= email		
 
 				.column
+					
 					+form('info@antanta.tech')(class='contact__form')
+						
 
 	+footer

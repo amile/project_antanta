@@ -477,7 +477,17 @@ a
 	
 		
 	&__btn
-		padding 14px 50px
+		padding 13px 49px
+		border 2px solid transparent
+		transition all 0.6s ease
+		
+		&:hover
+			color #807C7C
+			background-color #fff
+			border 2px solid $logo-color_yellow
+		
+			.advantage__btn-link
+				color #807C7C
 		
 	&__bg-image
 		top 0
@@ -570,39 +580,169 @@ a
 	padding-top 23px
 	padding-bottom 36px
 	
+	&__container
+		padding-right 0
+	
 	&__carousel
+		max-width 360px
+		margin 0 auto
 		padding-bottom 110px
+		overflow hidden
 	
 	&__title
 		color #242424
+		
+	&__wrapper_flex
+		display flex
+		position relative
+		left calc(-93.33% - 16px)
+		transform translate(93.33%)
+		
+	.is-reversing
+		transform translate(-93.33%)
 	
-	@media screen and (min-width: 768px)
+	.transform_none
+		transform none
+		transition transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)
+
+	&__item_flex
+		flex 0 0 93.33%
+		order 1
+		margin-right 16px
+		
+	.previous
+		order 0
+		
+	@media screen and (min-width: 381px) and (max-width: 767px)
+		&__container
+			padding 0 20px
+	
+	@media screen and (min-width: 620px)
 		padding-top 62px
+		
+		&__carousel
+			max-width 600px
+		
+		&__wrapper_flex
+			left calc(-46.6666% - 16px)
+			transform translate(46.6666%)
+			
+		.is-reversing
+			transform translate(calc(-46.6666% - 16px))
+			
+		.transform_none
+			transform none
+
+		&__item_flex
+			flex 0 0 46.6666%
+			
+	@media screen and (min-width: 768px)
+		&__carousel
+			max-width 744px
+			
+		&__wrapper_flex
+			left calc(-47.3118% - 16px)
+			transform translate(47.3118%)
+		
+		.is-reversing
+			transform translate(calc(-47.3118% - 16px))
+			
+		.transform_none
+			transform none
+		
+		&__item_flex
+			flex 0 0 47.3118%
+	
+	@media screen and (min-width: 792px)
+		&__container
+			padding 0 24px
 		
 	@media screen and (min-width: 1280px)
 		padding-top 100px
 		
+		&__container
+			padding 0 24px
+		
+		&__carousel
+			max-width 882px
+		
+		&__wrapper_flex
+			left calc(-46.0317% - 30px)
+			transform translate(46.0317%)
+			
+		.is-reversing
+			transform translate(-46.0317%)
+			
+		.transform_none
+			transform none
+		
+		&__item_flex
+			flex 0 0 46.0317%
+			margin-right 30px
+			
+	@media screen and (min-width: 1420px)
+		
+			
+		&__carousel
+			max-width none
+			
+		&__wrapper_flex
+			left calc(-30.29% - 30px)
+			transform translate(30.29%)
+			
+		.is-reversing
+			transform translate(-30.29%)
+		
+		.transform_none
+			transform none
+		
+		&__item_flex
+			flex 0 0 30.29%
+			margin-right 30px
+		
+
 .projects
 	
 	/// test
 	&__wrapper_flex
 		display flex
-		transform translate(0%)
-		transition all 1.4s ease
+		z-index 2
+		transform translate(100%)
+			
+	//.is-transform
+		// transform translate(100%)
+	
+	.is-transform_reverse
+		transform translate(-100%)
+		// transition transform 1.4s ease
+	
+	.translate_none
+		transform none
+		transition transform 1.4s ease
+		// transition transform 1.4s ease
+		// transition transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)
 		
 	&__item_flex
-		flex 0 0 100%
+		flex 0 0 93%
+		position relative
+		left calc(-100% + 8px)
+		margin-right 16px
 		min-height 100px
-		transition all 1.4s ease
+		transition opacity 1.4s ease
 		
 		@media screen and (min-width: 768px)
-			padding 0 24px
+			padding 0 20px
 			
 	&__container_carousel
 		margin-top 2rem
+		padding-right 0
+		
+		@media screen and (min-width: 381px)
+			padding 0 20px
 		
 		@media screen and (min-width: 768px) and (max-width: 1279px)
 			padding-left 0
+			padding-right 24px
 		
 	////
 	
@@ -612,12 +752,36 @@ a
 		margin-bottom 24px
 
 	&__carousel
+		max-width 360px
+		margin 0 auto
 		padding-bottom 85px
-		overflow-x hidden
+		overflow hidden
+			
+		&.background_none
+			background-size 0
+			transition background .6s ease-in-out
+			
+		&.background
+			background-size auto
+			transition background 1s ease-in-out
+			
+	@media screen and (min-width: 620px)
+		&__carousel
+			max-width 600px
+			
+		&__item_flex
+			flex 0 0 96%
+			//left calc(-100% + 12px)
 				
 	@media screen and (min-width: 768px)
 		padding-top 10px
 		
+		&__carousel
+			max-width none
+		
+		&__item_flex
+			flex 0 0 100%
+			left -100%
 		
 		&__title-wrapper
 			position relative
@@ -661,6 +825,20 @@ a
 		&__carousel-nav
 			left 53%
 			transform none
+			
+		&__carousel
+			// background-color yellow
+			background-image url('../images/about-back.png')
+			background-position left bottom
+			background-repeat no-repeat
+			background-size 40.9173%
+			transition background 1s ease-in-out
+			
+	@media screen and (min-width: 1420px)
+	
+		&__carousel
+			background-size 33.9552%
+		
 			
 .principle__item
 	margin-bottom 1.5rem
