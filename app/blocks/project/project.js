@@ -36,9 +36,9 @@ SlideshowProject.prototype.resizeSlideshow = function () {
 SlideshowProject.prototype.nextSlide = function () {
 	// this.slides[this.currentSlide].style.opacity = '0';
 	if (this.currentSlide === (this.numSlides - 1)) {
-		Array.prototype.forEach.call(this.slides, (slide, index) => {
-			// slide.style.order = String(index);
-		});
+		/* Array.prototype.forEach.call(this.slides, (slide, index) => {
+			slide.style.order = String(index);
+		}); */
 	}
 	this.bullets[this.currentSlide].className = this.bulletClassName;
 	this.bulletsIn[this.currentSlide].className = this.bulletInClassName;
