@@ -198,6 +198,7 @@ SlideshowProject.prototype.userTouch = function () {
 	let dist = 0;
 	let halfSlideWidth = 0;
 	const touchstart = function (e) {
+		console.log('hello touch');
 		const touchObj = e.changedTouches[0];
 		startX = parseInt(touchObj.clientX, 10);
 		e.preventDefault();
